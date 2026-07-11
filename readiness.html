@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>نسبة الجاهزية | مُهَيَّأ</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+
+<body>
+
+<div class="grid"></div>
+<div class="blob one"></div>
+<div class="blob two"></div>
+
+<header>
+
+    <div class="logo">
+        مُهَيَّأ
+    </div>
+
+    <nav>
+
+        <a href="index.html">الرئيسية</a>
+
+        <a href="activity.html">اختيار النشاط</a>
+
+        <a href="requirements.html">الاشتراطات</a>
+
+        <a href="#">الأسئلة الشائعة</a>
+
+        <a href="#">تواصل معنا</a>
+
+    </nav>
+
+    <div class="header-buttons">
+
+        <button class="login">
+            تسجيل الدخول
+        </button>
+
+    
+            <button class="menu-toggle" id="menuToggle" aria-label="فتح القائمة">
+                <span></span><span></span><span></span>
+            </button>
+</div>
+
+</header>
+<div class="mobile-nav" id="mobileNav"></div>
+
+
+
+
+<section class="readiness-page">
+
+
+<div class="readiness-header">
+
+    <span class="tag">رحلة الامتثال · الخطوة 5 من 5</span>
+
+    <h1>نسبة جاهزية طلبك</h1>
+
+    <p>هذي نسبة اكتمال طلبك بناءً على نتيجة الفحص. جهّز الملفات الناقصة عشان توصل 100%.</p>
+
+</div>
+
+
+<div class="steps-bar">
+
+    <div class="step">1. اختيار النشاط</div>
+
+    <div class="step">2. الاشتراطات</div>
+
+    <div class="step">3. رفع الملفات</div>
+
+    <div class="step">4. الفحص والمراجعة</div>
+
+    <div class="step active">5. نسبة الجاهزية</div>
+
+</div>
+
+
+<div class="gauge-wrap">
+
+    <div class="gauge" id="gauge" style="--pct:0;">
+        <div class="gauge-inner">
+            <h2 id="gaugeValue">0%</h2>
+            <span>نسبة الجاهزية</span>
+        </div>
+    </div>
+
+</div>
+
+
+<div class="readiness-breakdown">
+
+    <div class="breakdown-row">
+        <span class="b-name">✅ السجل التجاري</span>
+        <span class="status done">مكتمل</span>
+    </div>
+
+    <div class="breakdown-row">
+        <span class="b-name">⚠️ عقد إيجار الموقع</span>
+        <span class="status warning">يحتاج مراجعة</span>
+    </div>
+
+    <div class="breakdown-row">
+        <span class="b-name">❌ رخصة الدفاع المدني</span>
+        <span class="status error">ناقص</span>
+    </div>
+
+    <div class="breakdown-row">
+        <span class="b-name">✅ الاشتراطات الصحية</span>
+        <span class="status done">مكتمل</span>
+    </div>
+
+    <div class="breakdown-row">
+        <span class="b-name">✅ المخطط الهندسي</span>
+        <span class="status done">مكتمل</span>
+    </div>
+
+    <div class="breakdown-row">
+        <span class="b-name">✅ لافتة المنشأة</span>
+        <span class="status done">مكتمل</span>
+    </div>
+
+</div>
+
+
+<div class="readiness-actions">
+
+    <a href="report.html" class="primary">عرض التقرير النهائي ←</a>
+
+    <a href="upload.html" class="secondary">استكمال الملفات الناقصة</a>
+
+</div>
+
+
+</section>
+
+
+<script>
+
+    const targetPercent = 78;
+    const gauge = document.getElementById('gauge');
+    const gaugeValue = document.getElementById('gaugeValue');
+
+    let current = 0;
+
+    const timer = setInterval(() => {
+        current += 2;
+        if(current >= targetPercent){
+            current = targetPercent;
+            clearInterval(timer);
+        }
+        gauge.style.setProperty('--pct', current);
+        gaugeValue.textContent = current + '%';
+    }, 25);
+
+</script>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

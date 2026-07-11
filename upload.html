@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>رفع الملفات | مُهَيَّأ</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+
+<body>
+
+<div class="grid"></div>
+<div class="blob one"></div>
+<div class="blob two"></div>
+
+<header>
+
+    <div class="logo">
+        مُهَيَّأ
+    </div>
+
+    <nav>
+
+        <a href="index.html">الرئيسية</a>
+
+        <a href="activity.html">اختيار النشاط</a>
+
+        <a href="requirements.html">الاشتراطات</a>
+
+        <a href="#">الأسئلة الشائعة</a>
+
+        <a href="#">تواصل معنا</a>
+
+    </nav>
+
+    <div class="header-buttons">
+
+        <button class="login">
+            تسجيل الدخول
+        </button>
+
+    
+            <button class="menu-toggle" id="menuToggle" aria-label="فتح القائمة">
+                <span></span><span></span><span></span>
+            </button>
+</div>
+
+</header>
+<div class="mobile-nav" id="mobileNav"></div>
+
+
+
+
+<section class="upload-page">
+
+
+<div class="upload-header">
+
+    <span class="tag">رحلة الامتثال · الخطوة 3 من 5</span>
+
+    <h1>ارفع مستنداتك</h1>
+
+    <p>ارفع الملف المطلوب لكل اشتراط. تقدر ترفع صورة أو PDF، وبنراجعها بالذكاء الاصطناعي بالخطوة الجاية.</p>
+
+</div>
+
+
+<div class="steps-bar">
+
+    <div class="step">1. اختيار النشاط</div>
+
+    <div class="step">2. الاشتراطات</div>
+
+    <div class="step active">3. رفع الملفات</div>
+
+    <div class="step">4. الفحص والمراجعة</div>
+
+    <div class="step">5. نسبة الجاهزية</div>
+
+</div>
+
+
+<div class="upload-progress-bar">
+
+    <span id="progressLabel">0 من 6 ملفات مرفوعة</span>
+
+    <div class="upload-progress-track">
+        <div class="upload-progress-fill" id="progressFill"></div>
+    </div>
+
+</div>
+
+
+<div class="upload-grid" id="uploadGrid">
+
+    <div class="upload-slot" data-slot="commercial-record">
+        <div class="upload-slot-title">
+            <h3>السجل التجاري</h3>
+            <span class="slot-badge">لم يُرفع</span>
+        </div>
+        <div class="dropzone">
+            <div class="dz-icon">📄</div>
+            <div class="dz-text"><b>اضغط للرفع</b> أو اسحب الملف هنا</div>
+            <input type="file" hidden accept=".pdf,.jpg,.jpeg,.png">
+        </div>
+    </div>
+
+    <div class="upload-slot" data-slot="lease-contract">
+        <div class="upload-slot-title">
+            <h3>عقد إيجار الموقع</h3>
+            <span class="slot-badge">لم يُرفع</span>
+        </div>
+        <div class="dropzone">
+            <div class="dz-icon">📄</div>
+            <div class="dz-text"><b>اضغط للرفع</b> أو اسحب الملف هنا</div>
+            <input type="file" hidden accept=".pdf,.jpg,.jpeg,.png">
+        </div>
+    </div>
+
+    <div class="upload-slot" data-slot="civil-defense">
+        <div class="upload-slot-title">
+            <h3>رخصة الدفاع المدني</h3>
+            <span class="slot-badge">لم يُرفع</span>
+        </div>
+        <div class="dropzone">
+            <div class="dz-icon">📄</div>
+            <div class="dz-text"><b>اضغط للرفع</b> أو اسحب الملف هنا</div>
+            <input type="file" hidden accept=".pdf,.jpg,.jpeg,.png">
+        </div>
+    </div>
+
+    <div class="upload-slot" data-slot="health-permit">
+        <div class="upload-slot-title">
+            <h3>الاشتراطات الصحية</h3>
+            <span class="slot-badge">لم يُرفع</span>
+        </div>
+        <div class="dropzone">
+            <div class="dz-icon">📄</div>
+            <div class="dz-text"><b>اضغط للرفع</b> أو اسحب الملف هنا</div>
+            <input type="file" hidden accept=".pdf,.jpg,.jpeg,.png">
+        </div>
+    </div>
+
+    <div class="upload-slot" data-slot="engineering-plan">
+        <div class="upload-slot-title">
+            <h3>المخطط الهندسي</h3>
+            <span class="slot-badge">لم يُرفع</span>
+        </div>
+        <div class="dropzone">
+            <div class="dz-icon">📄</div>
+            <div class="dz-text"><b>اضغط للرفع</b> أو اسحب الملف هنا</div>
+            <input type="file" hidden accept=".pdf,.jpg,.jpeg,.png">
+        </div>
+    </div>
+
+    <div class="upload-slot" data-slot="signage-permit">
+        <div class="upload-slot-title">
+            <h3>لافتة المنشأة</h3>
+            <span class="slot-badge">لم يُرفع</span>
+        </div>
+        <div class="dropzone">
+            <div class="dz-icon">📄</div>
+            <div class="dz-text"><b>اضغط للرفع</b> أو اسحب الملف هنا</div>
+            <input type="file" hidden accept=".pdf,.jpg,.jpeg,.png">
+        </div>
+    </div>
+
+</div>
+
+
+<div class="upload-actions">
+
+    <button class="primary" id="continueBtn" disabled>متابعة للفحص والمراجعة ←</button>
+
+    <a href="requirements.html" class="secondary">رجوع للاشتراطات</a>
+
+</div>
+
+
+</section>
+
+
+<script>
+
+    const slots = document.querySelectorAll('.upload-slot');
+    const progressFill = document.getElementById('progressFill');
+    const progressLabel = document.getElementById('progressLabel');
+    const continueBtn = document.getElementById('continueBtn');
+    const totalSlots = slots.length;
+
+    function updateProgress(){
+        const uploadedCount = document.querySelectorAll('.upload-slot.uploaded').length;
+        const percent = Math.round((uploadedCount / totalSlots) * 100);
+        progressFill.style.width = percent + '%';
+        progressLabel.textContent = uploadedCount + ' من ' + totalSlots + ' ملفات مرفوعة';
+        continueBtn.disabled = uploadedCount < totalSlots;
+    }
+
+    slots.forEach(slot => {
+        const dropzone = slot.querySelector('.dropzone');
+        const input = slot.querySelector('input[type="file"]');
+        const badge = slot.querySelector('.slot-badge');
+
+        function handleFile(file){
+            if(!file) return;
+
+            slot.classList.add('uploaded');
+            badge.textContent = 'تم الرفع';
+
+            let chip = slot.querySelector('.file-chip');
+            if(!chip){
+                chip = document.createElement('div');
+                chip.className = 'file-chip';
+                slot.appendChild(chip);
+            }
+
+            chip.innerHTML = '<span>📎 ' + file.name + '</span><button class="remove-file" type="button">✕</button>';
+
+            chip.querySelector('.remove-file').addEventListener('click', (e) => {
+                e.stopPropagation();
+                chip.remove();
+                slot.classList.remove('uploaded');
+                badge.textContent = 'لم يُرفع';
+                input.value = '';
+                updateProgress();
+            });
+
+            updateProgress();
+        }
+
+        dropzone.addEventListener('click', () => input.click());
+
+        input.addEventListener('change', () => handleFile(input.files[0]));
+
+        dropzone.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            dropzone.classList.add('dragover');
+        });
+
+        dropzone.addEventListener('dragleave', () => {
+            dropzone.classList.remove('dragover');
+        });
+
+        dropzone.addEventListener('drop', (e) => {
+            e.preventDefault();
+            dropzone.classList.remove('dragover');
+            if(e.dataTransfer.files.length){
+                handleFile(e.dataTransfer.files[0]);
+            }
+        });
+    });
+
+    continueBtn.addEventListener('click', () => {
+        if(!continueBtn.disabled){
+            window.location.href = 'review.html';
+        }
+    });
+
+</script>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

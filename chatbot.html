@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>المستشار الذكي | مُهَيَّأ</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+
+<body>
+
+<div class="grid"></div>
+<div class="blob one"></div>
+<div class="blob two"></div>
+
+<header>
+
+    <div class="logo">
+        مُهَيَّأ
+    </div>
+
+    <nav>
+
+        <a href="index.html">الرئيسية</a>
+
+        <a href="activity.html">اختيار النشاط</a>
+
+        <a href="requirements.html">الاشتراطات</a>
+
+        <a href="chatbot.html">المستشار الذكي</a>
+
+        <a href="#">تواصل معنا</a>
+
+    </nav>
+
+    <div class="header-buttons">
+
+        <button class="login">
+            تسجيل الدخول
+        </button>
+
+    
+            <button class="menu-toggle" id="menuToggle" aria-label="فتح القائمة">
+                <span></span><span></span><span></span>
+            </button>
+</div>
+
+</header>
+<div class="mobile-nav" id="mobileNav"></div>
+
+
+
+
+<section class="chat-page">
+
+
+<div class="chat-header">
+
+    <span class="tag">🤖 مستشار مُهَيَّأ الذكي</span>
+
+    <h1>اسألني عن اشتراطاتك</h1>
+
+    <p>أجاوبك على أسئلتك حول الاشتراطات البلدية بناءً على نشاطك وملفاتك.</p>
+
+</div>
+
+
+<div class="chat-window">
+
+    <div class="chat-messages" id="chatMessages">
+
+        <div class="msg bot">
+            هلا! أنا مستشار مُهَيَّأ الذكي 🤖<br>
+            أقدر أساعدك تفهم أي اشتراط بلدي، أو أوضح لك وش ناقصك قبل التقديم. جرّب تسألني أو اختر سؤال جاهز تحت.
+        </div>
+
+    </div>
+
+    <div class="chat-suggestions" id="chatSuggestions">
+
+        <button class="chip-btn" data-q="وش اشتراطات الدفاع المدني؟">وش اشتراطات الدفاع المدني؟</button>
+        <button class="chip-btn" data-q="ليش عقد الإيجار لازم يكون موثق؟">ليش عقد الإيجار لازم يكون موثق؟</button>
+        <button class="chip-btn" data-q="وش نسبة جاهزيتي الحالية؟">وش نسبة جاهزيتي الحالية؟</button>
+        <button class="chip-btn" data-q="كيف أرفع ملفاتي؟">كيف أرفع ملفاتي؟</button>
+
+    </div>
+
+    <div class="chat-input-bar">
+
+        <input type="text" id="chatInput" placeholder="اكتب سؤالك هنا...">
+
+        <button class="chat-send" id="chatSend">➤</button>
+
+    </div>
+
+</div>
+
+
+</section>
+
+
+<script>
+
+    const messages = document.getElementById('chatMessages');
+    const input = document.getElementById('chatInput');
+    const sendBtn = document.getElementById('chatSend');
+    const suggestions = document.getElementById('chatSuggestions');
+
+    const knowledgeBase = [
+        {
+            keywords: ["دفاع مدني", "حريق", "سلامة"],
+            answer: "رخصة الدفاع المدني تثبت إن موقعك مستوفٍ لاشتراطات السلامة: طفايات حريق بمكانها الصحيح، مخارج طوارئ واضحة، وأنظمة إنذار شغالة. المستند المطلوب هو شهادة موافقة السلامة من الدفاع المدني نفسها."
+        },
+        {
+            keywords: ["ايجار", "إيجار", "عقد"],
+            answer: "لازم يكون عقد الإيجار موثّق عبر منصة إيجار الإلكترونية، مو عقد ورقي عادي. العقود غير الموثقة من أكثر أسباب رفض هذا الاشتراط تحديداً."
+        },
+        {
+            keywords: ["جاهزية", "نسبة", "جاهز"],
+            answer: "بناءً على آخر فحص، نسبة جاهزية طلبك الحالية 78%. عندك اشتراط واحد ناقص (رخصة الدفاع المدني) وواحد يحتاج مراجعة (عقد الإيجار). كمّلهم عشان توصل 100%."
+        },
+        {
+            keywords: ["ارفع", "رفع", "ملفات"],
+            answer: "من صفحة 'رفع الملفات' تقدر تسحب وتفلت أي ملف PDF أو صورة فوق المربع المخصص لكل اشتراط، أو تضغط عليه وتختار الملف من جهازك مباشرة."
+        },
+        {
+            keywords: ["صحي", "صحية"],
+            answer: "الاشتراطات الصحية تغطي النظافة والتهوية وطرق التخزين. الأنشطة الغذائية والصحية والشخصية عندها معايير أدق بسبب التعامل المباشر مع الجمهور."
+        },
+        {
+            keywords: ["سجل تجاري", "تجاري"],
+            answer: "السجل التجاري لازم يكون سارٍ، وأهم شي إن النشاط المكتوب فيه يطابق تماماً النشاط اللي اخترته بمُهَيَّأ. أي اختلاف يعتبر سبب رفض شائع."
+        },
+        {
+            keywords: ["بلدي", "تقديم"],
+            answer: "بعد ما توصل جاهزية عالية وتحمل التقرير النهائي، بتنتقل مباشرة لمنصة بلدي عشان تقدم طلبك رسمياً بكل مستنداتك جاهزة ومطابقة."
+        }
+    ];
+
+    function getAnswer(text){
+
+        const normalized = text.trim();
+
+        for(const item of knowledgeBase){
+
+            if(item.keywords.some(k => normalized.includes(k))){
+                return item.answer;
+            }
+
+        }
+
+        return "هذا سؤال زين! حالياً أقدر أساعدك بأسئلة تخص الاشتراطات، نسبة الجاهزية، ورفع الملفات. جرّب تسأل بطريقة ثانية أو اختر أحد الأسئلة الجاهزة تحت 🙂";
+
+    }
+
+    function addMessage(text, sender){
+
+        const div = document.createElement('div');
+        div.className = 'msg ' + sender;
+        div.innerHTML = text;
+        messages.appendChild(div);
+        messages.scrollTop = messages.scrollHeight;
+
+    }
+
+    function showTyping(){
+
+        const div = document.createElement('div');
+        div.className = 'msg bot typing';
+        div.id = 'typingIndicator';
+        div.innerHTML = '<span class="typing-dot"></span><span class="typing-dot"></span><span class="typing-dot"></span>';
+        messages.appendChild(div);
+        messages.scrollTop = messages.scrollHeight;
+
+    }
+
+    function removeTyping(){
+
+        const el = document.getElementById('typingIndicator');
+        if(el) el.remove();
+
+    }
+
+    function handleUserMessage(text){
+
+        if(!text.trim()) return;
+
+        addMessage(text, 'user');
+        input.value = '';
+
+        showTyping();
+
+        setTimeout(() => {
+            removeTyping();
+            addMessage(getAnswer(text), 'bot');
+        }, 1000 + Math.random() * 500);
+
+    }
+
+    sendBtn.addEventListener('click', () => handleUserMessage(input.value));
+
+    input.addEventListener('keydown', (e) => {
+        if(e.key === 'Enter') handleUserMessage(input.value);
+    });
+
+    suggestions.addEventListener('click', (e) => {
+        if(e.target.classList.contains('chip-btn')){
+            handleUserMessage(e.target.getAttribute('data-q'));
+        }
+    });
+
+</script>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

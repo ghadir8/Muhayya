@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>اختيار النشاط | مُهَيَّأ</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+
+<body>
+
+<div class="grid"></div>
+<div class="blob one"></div>
+<div class="blob two"></div>
+
+<header>
+
+    <div class="logo">
+        مُهَيَّأ
+    </div>
+
+    <nav>
+
+        <a href="index.html">الرئيسية</a>
+
+        <a href="activity.html">اختيار النشاط</a>
+
+        <a href="#">رحلة الامتثال</a>
+
+        <a href="#">الأسئلة الشائعة</a>
+
+        <a href="#">تواصل معنا</a>
+
+    </nav>
+
+    <div class="header-buttons">
+
+        <button class="login">
+            تسجيل الدخول
+        </button>
+
+    
+            <button class="menu-toggle" id="menuToggle" aria-label="فتح القائمة">
+                <span></span><span></span><span></span>
+            </button>
+</div>
+
+</header>
+<div class="mobile-nav" id="mobileNav"></div>
+
+
+
+
+<section class="activity-page">
+
+
+<div class="activity-header">
+
+
+<span class="tag">
+    رحلة الامتثال · الخطوة 1 من 5
+</span>
+
+
+<h1>
+    اختر نشاطك التجاري
+</h1>
+
+
+<p>
+حدد نشاطك لنجهز لك الاشتراطات والمتطلبات المناسبة قبل التقديم.
+</p>
+
+<div class="activity-search">
+    <span class="search-icon">🔍</span>
+    <input type="text" id="activitySearch" placeholder="ابحث عن نشاطك... مثال: مطعم" />
+</div>
+
+
+</div>
+
+
+
+
+<div class="activity-grid" id="activityGrid">
+
+
+
+<div class="activity-card" data-name="مغسلة ملابس">
+<div class="icon">🧺</div>
+<h2>
+مغسلة
+</h2>
+
+<p>
+خدمات التنظيف والغسيل
+</p>
+
+<a href="requirements.html?activity=laundry">
+←
+</a>
+
+</div>
+
+
+
+
+<div class="activity-card" data-name="كافيه">
+<div class="icon">☕</div>
+<h2>
+كافيه
+</h2>
+
+<p>
+أنشطة الأغذية والمشروبات
+</p>
+
+<a href="requirements.html?activity=cafe">
+←
+</a>
+
+</div>
+
+
+
+
+
+<div class="activity-card" data-name="مطعم">
+<div class="icon">🍽️</div>
+<h2>
+مطعم
+</h2>
+
+<p>
+الأنشطة الغذائية والمطاعم
+</p>
+
+<a href="requirements.html?activity=restaurant">
+←
+</a>
+
+</div>
+
+
+
+
+
+<div class="activity-card" data-name="صالون">
+<div class="icon">💇</div>
+<h2>
+صالون
+</h2>
+
+<p>
+الخدمات الشخصية
+</p>
+
+<a href="requirements.html?activity=salon">
+←
+</a>
+
+</div>
+
+
+
+
+
+<div class="activity-card" data-name="متجر">
+<div class="icon">🛍️</div>
+<h2>
+متجر
+</h2>
+
+<p>
+الأنشطة التجارية
+</p>
+
+<a href="requirements.html?activity=store">
+←
+</a>
+
+</div>
+
+
+
+
+
+<div class="activity-card" data-name="ورشة">
+<div class="icon">🔧</div>
+<h2>
+ورشة
+</h2>
+
+<p>
+الصيانة والخدمات الفنية
+</p>
+
+<a href="requirements.html?activity=workshop">
+←
+</a>
+
+</div>
+
+
+
+<div class="activity-card" data-name="عيادة طبية">
+<div class="icon">🏥</div>
+<h2>
+عيادة طبية
+</h2>
+
+<p>
+الخدمات الصحية والعلاجية
+</p>
+
+<a href="requirements.html?activity=clinic">
+←
+</a>
+
+</div>
+
+
+
+<div class="activity-card" data-name="صيدلية">
+<div class="icon">💊</div>
+<h2>
+صيدلية
+</h2>
+
+<p>
+بيع الأدوية والمستلزمات الطبية
+</p>
+
+<a href="requirements.html?activity=pharmacy">
+←
+</a>
+
+</div>
+
+
+
+<div class="activity-card" data-name="نادي رياضي">
+<div class="icon">🏋️</div>
+<h2>
+نادي رياضي
+</h2>
+
+<p>
+الأنشطة الرياضية واللياقة
+</p>
+
+<a href="requirements.html?activity=gym">
+←
+</a>
+
+</div>
+
+
+
+<div class="activity-card" data-name="مخبز">
+<div class="icon">🥖</div>
+<h2>
+مخبز
+</h2>
+
+<p>
+إنتاج وبيع المخبوزات
+</p>
+
+<a href="requirements.html?activity=bakery">
+←
+</a>
+
+</div>
+
+
+
+<div class="activity-card" data-name="صالة أفراح">
+<div class="icon">🎉</div>
+<h2>
+صالة أفراح
+</h2>
+
+<p>
+تنظيم واستضافة المناسبات
+</p>
+
+<a href="requirements.html?activity=event-hall">
+←
+</a>
+
+</div>
+
+
+
+<div class="activity-card" data-name="مكتب عقاري">
+<div class="icon">🏢</div>
+<h2>
+مكتب عقاري
+</h2>
+
+<p>
+الوساطة والخدمات العقارية
+</p>
+
+<a href="requirements.html?activity=real-estate">
+←
+</a>
+
+</div>
+
+
+</div>
+
+<p class="no-results" id="noResults" style="display:none;">
+    ما لقينا نشاط يطابق بحثك. جرّب كلمة ثانية.
+</p>
+
+
+</section>
+
+
+<script>
+    const searchInput = document.getElementById('activitySearch');
+    const cards = document.querySelectorAll('.activity-card');
+    const noResults = document.getElementById('noResults');
+
+    searchInput.addEventListener('input', () => {
+        const query = searchInput.value.trim();
+        let visibleCount = 0;
+
+        cards.forEach(card => {
+            const name = card.getAttribute('data-name');
+            const match = name.includes(query);
+            card.style.display = match ? '' : 'none';
+            if (match) visibleCount++;
+        });
+
+        noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+    });
+
+    cards.forEach(card => {
+        const link = card.querySelector('a');
+        card.addEventListener('click', () => {
+            localStorage.setItem('selectedActivity', card.getAttribute('data-name'));
+        });
+    });
+</script>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

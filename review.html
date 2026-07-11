@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>الفحص والمراجعة | مُهَيَّأ</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+
+<body>
+
+<div class="grid"></div>
+<div class="blob one"></div>
+<div class="blob two"></div>
+
+<header>
+
+    <div class="logo">
+        مُهَيَّأ
+    </div>
+
+    <nav>
+
+        <a href="index.html">الرئيسية</a>
+
+        <a href="activity.html">اختيار النشاط</a>
+
+        <a href="requirements.html">الاشتراطات</a>
+
+        <a href="#">الأسئلة الشائعة</a>
+
+        <a href="#">تواصل معنا</a>
+
+    </nav>
+
+    <div class="header-buttons">
+
+        <button class="login">
+            تسجيل الدخول
+        </button>
+
+    
+            <button class="menu-toggle" id="menuToggle" aria-label="فتح القائمة">
+                <span></span><span></span><span></span>
+            </button>
+</div>
+
+</header>
+<div class="mobile-nav" id="mobileNav"></div>
+
+
+
+
+<section class="review-page">
+
+
+<div class="review-header">
+
+    <span class="tag">رحلة الامتثال · الخطوة 4 من 5</span>
+
+    <h1>الفحص والمراجعة</h1>
+
+    <p>مُهَيَّأ يراجع الآن ملفاتك بالذكاء الاصطناعي ويتحقق من مطابقتها للاشتراطات.</p>
+
+</div>
+
+
+<div class="steps-bar">
+
+    <div class="step">1. اختيار النشاط</div>
+
+    <div class="step">2. الاشتراطات</div>
+
+    <div class="step">3. رفع الملفات</div>
+
+    <div class="step active">4. الفحص والمراجعة</div>
+
+    <div class="step">5. نسبة الجاهزية</div>
+
+</div>
+
+
+<!-- Scanning state -->
+
+<div class="scan-box" id="scanBox">
+
+    <div class="scan-ring"></div>
+
+    <div class="scan-status" id="scanStatus">جاري تحليل السجل التجاري...</div>
+
+    <div class="scan-sub">ما تحتاج تسكر الصفحة، الفحص ياخذ ثواني بس</div>
+
+</div>
+
+
+<!-- Results state -->
+
+<div class="review-results" id="reviewResults">
+
+    <div class="review-summary">
+
+        <div class="stat">
+            <h2 style="color:#15803D;">4</h2>
+            <span>مستندات متطابقة</span>
+        </div>
+
+        <div class="stat">
+            <h2 style="color:#B45309;">1</h2>
+            <span>تحتاج انتباه</span>
+        </div>
+
+        <div class="stat">
+            <h2 style="color:#B91C1C;">1</h2>
+            <span>غير متطابقة</span>
+        </div>
+
+    </div>
+
+
+    <div class="results-grid">
+
+        <div class="result-card ok">
+            <div class="result-icon">✅</div>
+            <div class="result-body">
+                <h3>السجل التجاري</h3>
+                <p>الملف مطابق. النشاط المسجّل بالسجل يتوافق مع النشاط المختار، والتاريخ ساري.</p>
+            </div>
+        </div>
+
+        <div class="result-card warn">
+            <div class="result-icon">⚠️</div>
+            <div class="result-body">
+                <h3>عقد إيجار الموقع</h3>
+                <p>العقد موجود، لكن ما قدرنا نتأكد إنه موثّق عبر منصة إيجار. راجع صفحة شرح الاشتراط قبل التقديم.</p>
+            </div>
+        </div>
+
+        <div class="result-card bad">
+            <div class="result-icon">❌</div>
+            <div class="result-body">
+                <h3>رخصة الدفاع المدني</h3>
+                <p>الملف المرفوع لا يحتوي على تاريخ سريان واضح. يفضّل رفع نسخة أحدث قبل إرسال الطلب.</p>
+            </div>
+        </div>
+
+        <div class="result-card ok">
+            <div class="result-icon">✅</div>
+            <div class="result-body">
+                <h3>الاشتراطات الصحية</h3>
+                <p>الملف مطابق لمتطلبات التصريح الصحي الأساسية.</p>
+            </div>
+        </div>
+
+        <div class="result-card ok">
+            <div class="result-icon">✅</div>
+            <div class="result-body">
+                <h3>المخطط الهندسي</h3>
+                <p>المخطط واضح ومقروء، ومعتمد من مكتب هندسي كما هو مطلوب.</p>
+            </div>
+        </div>
+
+        <div class="result-card ok">
+            <div class="result-icon">✅</div>
+            <div class="result-body">
+                <h3>لافتة المنشأة</h3>
+                <p>تصميم اللافتة يطابق المواصفات المسموح بها.</p>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="review-actions">
+
+        <a href="readiness.html" class="primary">عرض نسبة الجاهزية ←</a>
+
+        <a href="upload.html" class="secondary">تعديل الملفات</a>
+
+    </div>
+
+
+</div>
+
+
+</section>
+
+
+<script>
+
+    const messages = [
+        "جاري تحليل السجل التجاري...",
+        "جاري التحقق من عقد الإيجار...",
+        "جاري مراجعة رخصة الدفاع المدني...",
+        "جاري فحص الاشتراطات الصحية...",
+        "جاري مطابقة المخطط الهندسي...",
+        "جاري التحقق من لافتة المنشأة..."
+    ];
+
+    const scanStatus = document.getElementById('scanStatus');
+    let i = 0;
+
+    const interval = setInterval(() => {
+        i = (i + 1) % messages.length;
+        scanStatus.textContent = messages[i];
+    }, 900);
+
+    setTimeout(() => {
+        clearInterval(interval);
+        document.getElementById('scanBox').style.display = 'none';
+        document.getElementById('reviewResults').style.display = 'block';
+    }, 5400);
+
+</script>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

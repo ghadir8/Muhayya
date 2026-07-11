@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>التقرير النهائي | مُهَيَّأ</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+
+<body>
+
+<div class="grid"></div>
+<div class="blob one"></div>
+<div class="blob two"></div>
+
+<header>
+
+    <div class="logo">
+        مُهَيَّأ
+    </div>
+
+    <nav>
+
+        <a href="index.html">الرئيسية</a>
+
+        <a href="activity.html">اختيار النشاط</a>
+
+        <a href="requirements.html">الاشتراطات</a>
+
+        <a href="#">الأسئلة الشائعة</a>
+
+        <a href="#">تواصل معنا</a>
+
+    </nav>
+
+    <div class="header-buttons">
+
+        <button class="login">
+            تسجيل الدخول
+        </button>
+
+    
+            <button class="menu-toggle" id="menuToggle" aria-label="فتح القائمة">
+                <span></span><span></span><span></span>
+            </button>
+</div>
+
+</header>
+<div class="mobile-nav" id="mobileNav"></div>
+
+
+
+
+<section class="report-page">
+
+
+<div class="report-header">
+
+    <span class="tag">اكتملت رحلة الامتثال</span>
+
+    <h1>التقرير النهائي</h1>
+
+    <p>هذا ملخص جاهزية طلبك. راجعه قبل الانتقال إلى منصة بلدي لتقديم الطلب رسمياً.</p>
+
+</div>
+
+
+<div class="report-card" id="reportCard">
+
+    <div class="report-top">
+
+        <div class="logo">مُهَيَّأ</div>
+
+        <div class="report-meta">
+            رقم التقرير: <b id="reportId"></b><br>
+            تاريخ الإصدار: <b id="reportDate"></b>
+        </div>
+
+    </div>
+
+
+    <div class="report-score">
+
+        <div>
+            <h2>78%</h2>
+            <span>نسبة الجاهزية الإجمالية</span>
+        </div>
+
+        <div style="text-align:left;">
+            <span class="status warning" style="display:block;margin-bottom:6px;">يحتاج استكمال قبل التقديم</span>
+            <span style="color:#166534;font-size:14px;">4 مكتملة · 1 تحتاج مراجعة · 1 ناقصة</span>
+        </div>
+
+    </div>
+
+
+    <table class="report-table">
+
+        <thead>
+            <tr>
+                <th>الاشتراط</th>
+                <th>الحالة</th>
+                <th>ملاحظة</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            <tr>
+                <td>السجل التجاري</td>
+                <td><span class="status done">مكتمل</span></td>
+                <td>مطابق تماماً</td>
+            </tr>
+
+            <tr>
+                <td>عقد إيجار الموقع</td>
+                <td><span class="status warning">مراجعة</span></td>
+                <td>يحتاج توثيق عبر إيجار</td>
+            </tr>
+
+            <tr>
+                <td>رخصة الدفاع المدني</td>
+                <td><span class="status error">ناقص</span></td>
+                <td>تاريخ السريان غير واضح</td>
+            </tr>
+
+            <tr>
+                <td>الاشتراطات الصحية</td>
+                <td><span class="status done">مكتمل</span></td>
+                <td>مطابق</td>
+            </tr>
+
+            <tr>
+                <td>المخطط الهندسي</td>
+                <td><span class="status done">مكتمل</span></td>
+                <td>معتمد وواضح</td>
+            </tr>
+
+            <tr>
+                <td>لافتة المنشأة</td>
+                <td><span class="status done">مكتمل</span></td>
+                <td>مطابق للمواصفات</td>
+            </tr>
+
+        </tbody>
+
+    </table>
+
+
+</div>
+
+
+<div class="report-actions">
+
+    <button class="primary" onclick="window.print()">تحميل / طباعة التقرير</button>
+
+    <a href="https://balady.gov.sa" class="secondary" target="_blank" rel="noopener">الانتقال إلى منصة بلدي ←</a>
+
+</div>
+
+
+</section>
+
+
+<script>
+
+    document.getElementById('reportId').textContent = 'MH-' + Math.floor(100000 + Math.random() * 900000);
+
+    const today = new Date();
+    const formatted = today.toLocaleDateString('ar-SA', { year: 'numeric', month: 'long', day: 'numeric' });
+    document.getElementById('reportDate').textContent = formatted;
+
+</script>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

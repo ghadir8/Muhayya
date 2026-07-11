@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>شرح الاشتراط | مُهَيَّأ</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+
+<body>
+
+<div class="grid"></div>
+<div class="blob one"></div>
+<div class="blob two"></div>
+
+<header>
+
+    <div class="logo">
+        مُهَيَّأ
+    </div>
+
+    <nav>
+
+        <a href="index.html">الرئيسية</a>
+
+        <a href="activity.html">اختيار النشاط</a>
+
+        <a href="requirements.html">الاشتراطات</a>
+
+        <a href="#">الأسئلة الشائعة</a>
+
+        <a href="#">تواصل معنا</a>
+
+    </nav>
+
+    <div class="header-buttons">
+
+        <button class="login">
+            تسجيل الدخول
+        </button>
+
+    
+            <button class="menu-toggle" id="menuToggle" aria-label="فتح القائمة">
+                <span></span><span></span><span></span>
+            </button>
+</div>
+
+</header>
+<div class="mobile-nav" id="mobileNav"></div>
+
+
+
+
+<section class="explain-page">
+
+    <a href="requirements.html" class="back-link">→ رجوع لقائمة الاشتراطات</a>
+
+    <div class="explain-header">
+
+        <span class="tag" id="reqStatus">اشتراط</span>
+
+        <h1 id="reqTitle">تفاصيل الاشتراط</h1>
+
+        <p id="reqIntro">تحميل تفاصيل الاشتراط...</p>
+
+    </div>
+
+
+    <div class="explain-card">
+
+        <h3>📌 وش المقصود بهذا الاشتراط؟</h3>
+
+        <p id="reqWhat"></p>
+
+    </div>
+
+
+    <div class="explain-card">
+
+        <h3>❓ ليش مطلوب؟</h3>
+
+        <p id="reqWhy"></p>
+
+    </div>
+
+
+    <div class="explain-card">
+
+        <h3>📎 المستندات المطلوبة</h3>
+
+        <ul class="doc-list" id="reqDocs"></ul>
+
+    </div>
+
+
+    <div class="explain-card">
+
+        <div class="note-box">
+            <span class="emoji">💡</span>
+            <span id="reqTip"></span>
+        </div>
+
+    </div>
+
+
+    <div class="explain-actions">
+
+        <a href="upload.html" class="primary">ارفع الملفات الآن</a>
+
+        <a href="requirements.html" class="secondary">رجوع للاشتراطات</a>
+
+    </div>
+
+
+</section>
+
+
+<script>
+
+    const requirementsData = {
+        "commercial-record": {
+            title: "السجل التجاري",
+            status: "جاهز",
+            intro: "وثيقة أساسية تثبت أن نشاطك مسجّل رسمياً وتحدد نوعه ومالكه.",
+            what: "نسخة سارية من السجل التجاري الصادر من وزارة التجارة، باسم المنشأة أو صاحبها، ويطابق النشاط اللي اخترته بالضبط.",
+            why: "بلدي يتحقق من مطابقة النشاط المسجّل بالسجل التجاري مع النشاط المطلوب ترخيصه. أي اختلاف بينهم يعتبر سبب رفض شائع.",
+            docs: [
+                "صورة واضحة من السجل التجاري (PDF أو صورة عالية الجودة)",
+                "التأكد إن تاريخ الانتهاء ما زال ساري",
+                "التأكد إن النشاط المكتوب بالسجل يطابق النشاط المختار"
+            ],
+            tip: "لو السجل التجاري ناقص فيه النشاط المطلوب، لازم تحدثه أول من بوابة وزارة التجارة قبل لا ترفعه هنا."
+        },
+        "lease-contract": {
+            title: "عقد إيجار الموقع",
+            status: "يحتاج مراجعة",
+            intro: "إثبات حيازتك القانونية للموقع اللي بتمارس فيه نشاطك.",
+            what: "عقد إيجار موثّق إلكترونياً (عبر منصة إيجار) أو صك ملكية سارٍ باسم صاحب النشاط أو المنشأة، يوضح عنوان الموقع بدقة.",
+            why: "الأمانة تتأكد إن الموقع المذكور بالطلب فعلاً تحت تصرفك القانوني، وإن استخدامه يتوافق مع النشاط التجاري المطلوب.",
+            docs: [
+                "عقد إيجار موثّق من منصة إيجار (وليس عقد ورقي غير موثّق)",
+                "أو صك الملكية إذا كان الموقع مملوك لك",
+                "التأكد إن العنوان بالعقد مطابق تماماً لعنوان الطلب"
+            ],
+            tip: "العقود غير الموثّقة إلكترونياً من أكثر أسباب رفض هذا الاشتراط. وثّق عقدك من منصة إيجار قبل الرفع."
+        },
+        "civil-defense": {
+            title: "رخصة الدفاع المدني",
+            status: "ناقص",
+            intro: "موافقة تثبت أن موقعك مستوفٍ لاشتراطات السلامة من الحريق والطوارئ.",
+            what: "شهادة سلامة صادرة من الدفاع المدني تغطي وسائل الإطفاء، مخارج الطوارئ، وأنظمة الإنذار المناسبة لنوع نشاطك ومساحته.",
+            why: "بعض الأنشطة (خصوصاً المطاعم والكافيهات والصالات) تتطلب مستوى أعلى من اشتراطات السلامة بسبب طبيعة المخاطر فيها.",
+            docs: [
+                "شهادة موافقة السلامة من الدفاع المدني",
+                "مخطط يوضح مواقع طفايات الحريق ومخارج الطوارئ",
+                "تقرير الفحص الدوري لأنظمة الإنذار إن وجدت"
+            ],
+            tip: "احجز موعد كشف الدفاع المدني بدري، لأن مواعيدهم عادة تاخذ وقت وتأثر على جدولك الزمني للتقديم."
+        },
+        "health-permit": {
+            title: "الاشتراطات الصحية",
+            status: "يحتاج مراجعة",
+            intro: "معايير تضمن أن نشاطك يحافظ على الصحة العامة للعاملين والزوار.",
+            what: "تصريح الصحة العامة، ويغطي معايير النظافة، التهوية، طرق التخزين، والتخلص من النفايات حسب نوع النشاط.",
+            why: "الأنشطة المرتبطة بالغذاء أو الخدمات الشخصية أو الصحية لها اشتراطات صحية أدق بسبب تعاملها المباشر مع الجمهور.",
+            docs: [
+                "تصريح الصحة العامة الساري",
+                "شهادات صحية للعاملين (للأنشطة الغذائية والشخصية)",
+                "خطة التخلص من النفايات إذا كان النشاط يتطلبها"
+            ],
+            tip: "الأنشطة الغذائية تحتاج غالباً شهادة سلامة غذائية إضافية — تأكد منها مبكراً حسب نوع نشاطك."
+        },
+        "engineering-plan": {
+            title: "المخطط الهندسي",
+            status: "جاهز",
+            intro: "رسم معتمد يوضح تصميم وتوزيع المساحة الداخلية للمنشأة.",
+            what: "مخطط معماري معتمد من مكتب هندسي مرخّص، يوضح المساحة الكلية، توزيع الأقسام، ومسارات الحركة داخل المنشأة.",
+            why: "الأمانة تستخدم المخطط للتأكد من مطابقة المساحة والتوزيع الداخلي لاشتراطات النشاط المطلوب.",
+            docs: [
+                "مخطط معماري بصيغة PDF معتمد من مكتب هندسي",
+                "توقيع وختم المكتب الهندسي المسؤول",
+                "مقياس رسم واضح يبيّن الأبعاد الفعلية"
+            ],
+            tip: "تأكد إن المخطط محدّث لآخر تعديل فعلي بالموقع، لأن أي فرق بين المخطط والواقع يوقف الطلب."
+        },
+        "signage-permit": {
+            title: "لافتة المنشأة",
+            status: "ناقص",
+            intro: "تصريح يحدد مواصفات لوحة المحل الخارجية المسموح بها.",
+            what: "تصريح لافتة صادر من الأمانة، يوضح أبعاد اللافتة، مكان تركيبها، والمواصفات البصرية المسموح بها حسب نظام الشارع.",
+            why: "يضمن هذا الاشتراط انسجام واجهات المحلات مع الطابع العام للمنطقة وعدم مخالفة أنظمة الإعلانات التجارية.",
+            docs: [
+                "تصميم اللافتة بالأبعاد والألوان",
+                "صورة لواجهة المحل الحالية",
+                "تصريح اللافتة من إدارة اللوحات الإعلانية بالأمانة"
+            ],
+            tip: "بعض الأحياء التاريخية أو المناطق التراثية لها اشتراطات لافتات خاصة — تأكد من نظام المنطقة قبل تصميم اللافتة."
+        }
+    };
+
+    const statusClassMap = { "جاهز": "done", "يحتاج مراجعة": "warning", "ناقص": "error" };
+
+    const params = new URLSearchParams(window.location.search);
+    const reqKey = params.get('req');
+    const data = requirementsData[reqKey] || requirementsData["commercial-record"];
+
+    document.getElementById('reqTitle').textContent = data.title;
+    document.getElementById('reqIntro').textContent = data.intro;
+    document.getElementById('reqWhat').textContent = data.what;
+    document.getElementById('reqWhy').textContent = data.why;
+    document.getElementById('reqTip').textContent = data.tip;
+
+    const statusTag = document.getElementById('reqStatus');
+    statusTag.textContent = "الحالة: " + data.status;
+
+    const docsList = document.getElementById('reqDocs');
+    data.docs.forEach(doc => {
+        const li = document.createElement('li');
+        li.innerHTML = '<span class="check">✓</span><span>' + doc + '</span>';
+        docsList.appendChild(li);
+    });
+
+</script>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
